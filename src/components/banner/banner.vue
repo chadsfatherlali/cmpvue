@@ -32,10 +32,7 @@ export default {
 		axios.get('https://vendorlist.consensu.org/vendorlist.json')
 			.then(response => {
 				const consentData = new ConsentString();
-
 				consentData.setGlobalVendorList(response.data)
-
-				console.log('== String', consentData.getConsentString())
 			})
 			.catch(error => {
 				console.log('== Error', error)
