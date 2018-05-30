@@ -1,42 +1,28 @@
 <style lang="scss">
-	div {
-		padding: 1em;
-		background-color: black;
-		h1 {
-			color: red;
-		}
-		h2 {
-			color: white;
-			font-weight: bold;
-		}
-		p {
-			color: white;
-		}
+	a {
+		cursor: pointer;
+		color: blue;
+		text-decoration: underline;
 	}
 </style>
-
 <template>
 	<div>
-		<h1>{{ title }}</h1>
-		<h2>Cuerpo del texto</h2>
-		<p>{{ content }}</p>
-		<button @click="addName">Add name</button>
+		<ConsentBox/>
+		<Banner/>
 	</div>
 </template>
 
 <script>
+import ConsentBox from '../consentBox/consentBox.vue'
+import Banner from '../banner/banner.vue'
+
 export default {
 	data () {
-		return {
-			title: 'Este es la cabecera',
-			content: 'Hola mundo como estamos esto es una aplicacion con vue loader'
-		}
+		return {}
 	},
-	methods: {
-		addName () {
-			this.content = this.content + ' ' + 'Santiago'
-		}
+	components: {
+		ConsentBox: ConsentBox,
+		Banner: Banner
 	}
 }
 </script>
-

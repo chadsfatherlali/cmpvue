@@ -3,10 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
+const ENV = process.env.NODE_ENV || 'development';
+
 module.exports = {
-	mode: 'development',
+	mode: ENV,
 	entry: {
-		app: './src/main.js'
+		cmp: './src/main.js'
 	},
 	output: {
 		filename: '[name].bundle.js',
@@ -23,10 +25,7 @@ module.exports = {
 		rules: [
 			{
 				test: /\.js$/,
-				loader: 'babel-loader',
-				query: {
-					presets: ['es2015']
-				}
+				loader: 'babel-loader'
 			},
 			{
 				test: /\.vue$/,
